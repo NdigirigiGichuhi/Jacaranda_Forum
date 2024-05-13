@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block title %}Dashboard{% endblock title %}
+
+
+{% block main %}
+    <div class="postcard">
+        <p>User: {{ current_user.username }}</p>
+        <p>First_name: {{ current_user.first_name }}</p>
+        <p>Last_name: {{ current_user.last_name }}</p>
+        <p>Email: {{ current_user.email }}</p>
+        <p>Number: {{ current_user.phone }}</p>
+        <a href="/update_profile/{{ user.id }}"><h5>Edit Profile</h5></a>
+    </div>
+{% endblock main %}

@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+
+{% block title %}login{% endblock title %}
+
+{% block main %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+
+    <div class="login">
+        <h2>Welcome</h2>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username() }}</br>
+                {% for error in form.username.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                
+                {{ form.password() }}</br>
+                {% for error in form.password.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+
+{% endblock main %}

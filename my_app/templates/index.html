@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% block main %}
+    <div class="container"> 
+        <div class="div1">
+            <h1>Welcome to Our Village</h1>
+            <p>"Connecting our Village, One Post at a Time!"</p>
+        </div>
+        <div class="div1">
+            <img class="coffee"  src="{{ url_for('static', filename='img/coffee.jpg') }}" alt="photo">
+            <div class="text">
+                <p>From Seed to Sip: Embrace the Flavor of Community in Jacaranda</p>
+                <p>Where Every Bean Tells a Story: Jacaranda Coffee Research Institute</p>
+            </div>
+            
+        </div>
+        
+
+    </div>
+{% endblock main %}
